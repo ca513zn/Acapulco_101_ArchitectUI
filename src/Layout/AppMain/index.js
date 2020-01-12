@@ -1,4 +1,4 @@
-import { BrowserRouter as Switch, Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Switch, Router, Route, withRouter, Redirect } from 'react-router-dom';
 import React, { Suspense, lazy, Fragment, Component } from 'react';
 import Loader from 'react-loaders'
 
@@ -6,7 +6,7 @@ import {
     ToastContainer,
 } from 'react-toastify';
 
-const Components = lazy(() => import('../../DemoPages/Components'));
+const Dashboards = lazy(() => import('../../DemoPages/Dashboards'));
 const Login = lazy(() => import('../../DemoPages/UserPages/Login'));
 
 
@@ -136,32 +136,31 @@ class AppMain extends Component {
             routes = (
                 <Switch>
                     {/* Dashboards */}
-                    < Suspense fallback={
-                        < div className="loader-container" >
+
+                    <Suspense fallback={
+                        <div className="loader-container">
                             <div className="loader-container-inner">
                                 <div className="text-center">
-                                    <Loader type="ball-pulse-rise" />
+                                    <Loader type="ball-grid-beat" />
                                 </div>
-                                <h6 className="mt-5">
-                                    Please wait while we load all the Components examples
-                                <small>Because this is a demonstration we load at once all the Components examples. This wouldn't happen in a real live app!</small>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Dashboards examples
+                                <small>Because this is a demonstration, we load at once all the Dashboards examples. This wouldn't happen in a real live app!</small>
                                 </h6>
                             </div>
-                        </div >
+                        </div>
                     }>
-                        <Route
-                            path="/components"
-                            exact
+                        <Route path="/dashboards"
                             render={props => (
-                                <Components
+                                <Dashboards
                                     {...props}
-                                    userId={this.state.userId}
-                                    token={this.state.token} />
-                            )}
-                        />
-                    </Suspense >
-                    <Route exact path="/" render={() => (
-                        <Redirect to="/components" />
+                                    onLogin={this.loginHandler}
+                                    loading={this.state.authLoading}
+                                />
+                            )} />
+                    </Suspense>
+                    <Route exact path="/login" render={() => (
+                        <Redirect to="/dashboards" />
                     )} />
                     <ToastContainer />
 

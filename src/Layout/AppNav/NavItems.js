@@ -5,7 +5,7 @@ export const MainNav = [
         content: [
             {
                 label: 'Analytics',
-                to: '#/dashboards/analytics',
+                to: '/dashboards/analytics',
             },
             {
                 label: 'Commerce',

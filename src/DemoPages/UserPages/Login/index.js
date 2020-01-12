@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from "react";
 
 import Slider from "react-slick";
-
 import bg1 from '../../../assets/utils/images/originals/city.jpg';
 import bg2 from '../../../assets/utils/images/originals/citydark.jpg';
 import bg3 from '../../../assets/utils/images/originals/citynights.jpg';
@@ -174,9 +173,19 @@ export default class Login extends Component {
                                             </Col>
                                             <Col md={6}>
                                                 <FormGroup>
-                                                    <Label for="examplePassword">Password</Label>
-                                                    <Input type="password" name="password" id="examplePassword"
-                                                        placeholder="Password here..." />
+                                                    <Label for="password">Password</Label>
+                                                    <Input
+                                                        name='password'
+                                                        id="password"
+                                                        label="Password"
+                                                        type="password"
+                                                        control="input"
+                                                        onChange={this.inputChangeHandler}
+                                                        onBlur={this.inputBlurHandler.bind(this, 'password')}
+                                                        value={this.state.loginForm['password'].value}
+                                                        valid={this.state.loginForm['password'].valid}
+                                                        touched={this.state.loginForm['password'].touched}
+                                                    />
                                                 </FormGroup>
                                             </Col>
                                         </Row>
