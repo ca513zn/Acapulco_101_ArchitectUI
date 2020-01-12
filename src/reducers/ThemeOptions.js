@@ -110,23 +110,24 @@ export const setBackgroundImage = backgroundImage => ({
 });
 
 export default function reducer(state = {
-    backgroundColor: '',
-    headerBackgroundColor: '',
+    backgroundColor: 'bg-night-sky sidebar-text-light',
+    headerBackgroundColor: 'bg-night-sky header-text-light',
     enableMobileMenuSmall: '',
     enableBackgroundImage: false,
     enableClosedSidebar: false,
     enableFixedHeader: true,
-    enableHeaderShadow: true,
+    enableHeaderShadow: false,
     enableSidebarShadow: true,
     enableFixedFooter: true,
     enableFixedSidebar: true,
-    colorScheme: 'white',
+    colorScheme: 'gray',
     backgroundImage: sideBar6,
     backgroundImageOpacity: 'opacity-06',
     enablePageTitleIcon: true,
     enablePageTitleSubheading: true,
     enablePageTabsAlt: true,
 }, action) {
+    // eslint-disable-next-line default-case
     switch (action.type) {
         case SET_ENABLE_BACKGROUND_IMAGE:
             return {
