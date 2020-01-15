@@ -1,4 +1,5 @@
-import sideBar6 from '../assets/utils/images/sidebar/city1.jpg';
+import sideBar6 from '../../assets/utils/images/sidebar/city1.jpg';
+
 
 export const SET_ENABLE_BACKGROUND_IMAGE = 'THEME_OPTIONS/SET_ENABLE_BACKGROUND_IMAGE';
 

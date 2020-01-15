@@ -22,7 +22,7 @@ import {
     setEnablePageTitleSubheading,
     setEnablePageTabsAlt,
     setEnablePageTitleIcon,
-} from '../../reducers/ThemeOptions';
+} from '../../store/reducers/ThemeOptions';
 
 import sideBar1 from '../../assets/utils/images/sidebar/abstract1.jpg';
 import sideBar2 from '../../assets/utils/images/sidebar/abstract2.jpg';
@@ -901,7 +901,6 @@ const mapStateToProps = state => ({
     enableSidebarShadow: state.ThemeOptions.enableSidebarShadow,
     enableFixedSidebar: state.ThemeOptions.enableFixedSidebar,
     enableFixedFooter: state.ThemeOptions.enableFixedFooter,
-
 
     enablePageTitleIcon: state.ThemeOptions.enablePageTitleIcon,
     enablePageTitleSubheading: state.ThemeOptions.enablePageTitleSubheading,
