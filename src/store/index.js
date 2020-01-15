@@ -4,15 +4,17 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/es/storage";
 import logger from "redux-logger";
 import ThemeOptions from "./reducers/ThemeOptions";
+import UserInformation from "./reducers/UserInformation";
 
 const rootReducer = combineReducers({
-  ThemeOptions
+  ThemeOptions,
+  UserInformation,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["ThemeOptions"]
+  whitelist: ["ThemeOptions", "UserInformation"]
 };
 
 export const store = createStore(
